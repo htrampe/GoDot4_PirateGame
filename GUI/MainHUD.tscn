@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkp2hvsddswaw"]
+
+[ext_resource type="Script" path="res://Skripte/MainHUD.gd" id="1_agxu5"]
+[ext_resource type="Texture2D" uid="uid://v2xd000i8lmu" path="res://Assets/Pirate Treasure/Sprites/Red Diamond/01.png" id="1_vdfdt"]
+[ext_resource type="Texture2D" uid="uid://dficypeffxk0d" path="res://Assets/Pirate Treasure/Sprites/Gold Coin/01.png" id="2_mkt4h"]
+
+[node name="MainHUD" type="CanvasLayer"]
+script = ExtResource("1_agxu5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = -0.003
+anchor_right = 1.0
+anchor_bottom = -0.003
+offset_left = -23.0
+offset_top = -0.056
+offset_right = 37.0
+offset_bottom = 63.944
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="RedDiamondsValue" type="RichTextLabel" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(60, 25)
+layout_mode = 2
+text = "99"
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer"]
+position = Vector2(-10, 13)
+texture = ExtResource("1_vdfdt")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="GoldCoinValue" type="RichTextLabel" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
+text = "99"
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer2"]
+position = Vector2(-10, 13)
+texture = ExtResource("2_mkt4h")

@@ -1,0 +1,107 @@
+[gd_scene load_steps=17 format=3 uid="uid://bkwifndwftpg7"]
+
+[ext_resource type="Script" path="res://Skripte/Barrel.gd" id="1_qqbj0"]
+[ext_resource type="Texture2D" uid="uid://dn7g27kep5kin" path="res://Assets/Merchant Ship/Sprites/Barrel/Destroyed/1.png" id="2_fwdkb"]
+[ext_resource type="Texture2D" uid="uid://bks00n80ghcfu" path="res://Assets/Merchant Ship/Sprites/Barrel/Destroyed/2.png" id="3_bl6yd"]
+[ext_resource type="Texture2D" uid="uid://dg3taqovu1fju" path="res://Assets/Merchant Ship/Sprites/Barrel/Destroyed/3.png" id="4_0dqsj"]
+[ext_resource type="Texture2D" uid="uid://chevvtfqqerur" path="res://Assets/Merchant Ship/Sprites/Barrel/Destroyed/4.png" id="5_kbwu5"]
+[ext_resource type="Texture2D" uid="uid://cryiisj4e02hy" path="res://Assets/Merchant Ship/Sprites/Barrel/Destroyed/5.png" id="6_e2s0w"]
+[ext_resource type="Texture2D" uid="uid://wv0h7yrorrp2" path="res://Assets/Merchant Ship/Sprites/Barrel/Hit/1.png" id="7_1lk2c"]
+[ext_resource type="Texture2D" uid="uid://2p0vo3vclfm0" path="res://Assets/Merchant Ship/Sprites/Barrel/Hit/2.png" id="8_5sk6t"]
+[ext_resource type="Texture2D" uid="uid://b35kmhnkktnwo" path="res://Assets/Merchant Ship/Sprites/Barrel/Hit/3.png" id="9_assja"]
+[ext_resource type="Texture2D" uid="uid://mdlmyla4q3uf" path="res://Assets/Merchant Ship/Sprites/Barrel/Hit/4.png" id="10_jdirm"]
+[ext_resource type="Texture2D" uid="uid://cxy2sxxdt5qg8" path="res://Assets/Merchant Ship/Sprites/Barrel/Idle/1.png" id="11_iqn0t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibhir"]
+size = Vector2(23, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h183t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fwdkb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bl6yd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0dqsj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kbwu5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_e2s0w")
+}],
+"loop": true,
+"name": &"destroyed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_1lk2c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5sk6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_assja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jdirm")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_iqn0t")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="Curve" id="Curve_5s6av"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.227273), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_j3duk"]
+curve = SubResource("Curve_5s6av")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ddd51"]
+particle_flag_disable_z = true
+direction = Vector3(1, 1, 0)
+spread = 180.0
+gravity = Vector3(0, 2, 0)
+initial_velocity_min = 135.8
+initial_velocity_max = 228.4
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_curve = SubResource("CurveTexture_j3duk")
+
+[node name="Barrel" type="Node2D"]
+script = ExtResource("1_qqbj0")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_ibhir")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_h183t")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 5
+process_material = SubResource("ParticleProcessMaterial_ddd51")
+texture = ExtResource("6_e2s0w")
+lifetime = 0.4
+one_shot = true
+explosiveness = 0.68
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
