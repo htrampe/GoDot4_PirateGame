@@ -10,11 +10,9 @@ func _ready():
 func _process(delta):
 	pass
 
+@export
+var spikesDamage = 1
 
 func _on_area_2d_body_entered(body):
 	if(body.is_in_group("Player")):
-		Global.addGoldCoin()
-		$AudioStreamPlayer2D.play(0.2)
-		$AnimatedSprite2D.visible = false
-		await get_tree().create_timer(0.5).timeout		
-		queue_free()
+		Global.playerDamage(spikesDamage)

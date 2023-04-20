@@ -10,11 +10,12 @@ func _ready():
 func _process(delta):
 	pass
 
+@export
+var targetLevel = ""
+
+@export
+var neededGold = 0
 
 func _on_area_2d_body_entered(body):
-	if(body.is_in_group("Player")):
-		Global.addGoldCoin()
-		$AudioStreamPlayer2D.play(0.2)
-		$AnimatedSprite2D.visible = false
-		await get_tree().create_timer(0.5).timeout		
-		queue_free()
+	if(body.is_in_group("Player") and Global.goldCoins >= neededGold):
+		get_tree().change_scene_to_file("res://Levels/" + targetLevel + ".tscn")

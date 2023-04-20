@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0ywhacsqy1qu"]
+
+[ext_resource type="Script" path="res://Skripte/DeadLevel.gd" id="1_wpc4q"]
+
+[node name="DeadLevel" type="Node2D"]
+script = ExtResource("1_wpc4q")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 163.0
+offset_top = 102.0
+offset_right = 346.0
+offset_bottom = 170.0
+text = "Dead! Reload..."
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

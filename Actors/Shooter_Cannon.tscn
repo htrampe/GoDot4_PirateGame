@@ -1,0 +1,57 @@
+[gd_scene load_steps=11 format=3 uid="uid://cun4d2xpg7ku8"]
+
+[ext_resource type="PackedScene" uid="uid://c0ry2bpr6pc38" path="res://Actors/Shooter.tscn" id="1_dr5nq"]
+[ext_resource type="Texture2D" uid="uid://bic3g8pcja2yy" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Fire/1.png" id="2_7a0fv"]
+[ext_resource type="Texture2D" uid="uid://dsp15j8a0c2ef" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Fire/2.png" id="3_yd6vg"]
+[ext_resource type="Texture2D" uid="uid://csly02vctkkg3" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Fire/3.png" id="4_j5qim"]
+[ext_resource type="Texture2D" uid="uid://dqn8bd1sc8hge" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Fire/4.png" id="5_tug3c"]
+[ext_resource type="Texture2D" uid="uid://ticd8h2oiss5" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Fire/5.png" id="6_iv1pr"]
+[ext_resource type="Texture2D" uid="uid://btguutya3iq22" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Fire/6.png" id="7_h3jbu"]
+[ext_resource type="Texture2D" uid="uid://c5fp44l0nhy8y" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Idle/1.png" id="8_vbhwk"]
+[ext_resource type="AudioStream" uid="uid://rtywy24o13pl" path="res://Sound/canon.wav" id="9_ddbl0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pswtl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7a0fv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yd6vg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_j5qim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tug3c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_iv1pr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_h3jbu")
+}],
+"loop": false,
+"name": &"fire",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_vbhwk")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Shooter_Cannon" instance=ExtResource("1_dr5nq")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_pswtl")
+animation = &"fire"
+
+[node name="CannonSound" type="AudioStreamPlayer2D" parent="." index="2"]
+stream = ExtResource("9_ddbl0")
+volume_db = -0.832
+max_distance = 500.0
+attenuation = 1.07177

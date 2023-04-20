@@ -1,0 +1,57 @@
+[gd_scene load_steps=11 format=3 uid="uid://c7s8pjk84bd2q"]
+
+[ext_resource type="PackedScene" uid="uid://c0ry2bpr6pc38" path="res://Actors/Shooter.tscn" id="1_04guq"]
+[ext_resource type="Texture2D" uid="uid://dro83rjoupkme" path="res://Assets/Shooter Traps/Sprites/Totems/Head 1/Attack 1/1.png" id="2_7w7ec"]
+[ext_resource type="Texture2D" uid="uid://cpgetxsasn8y4" path="res://Assets/Shooter Traps/Sprites/Totems/Head 1/Attack 1/2.png" id="3_ldft7"]
+[ext_resource type="Texture2D" uid="uid://bedta0fun7swp" path="res://Assets/Shooter Traps/Sprites/Totems/Head 1/Attack 1/3.png" id="4_hwgd2"]
+[ext_resource type="Texture2D" uid="uid://xwseurgwjndy" path="res://Assets/Shooter Traps/Sprites/Totems/Head 1/Attack 1/4.png" id="5_44b7j"]
+[ext_resource type="Texture2D" uid="uid://dhagyp1hu3btu" path="res://Assets/Shooter Traps/Sprites/Totems/Head 1/Attack 1/5.png" id="6_tbh2k"]
+[ext_resource type="Texture2D" uid="uid://dw761w7464ujv" path="res://Assets/Shooter Traps/Sprites/Totems/Head 1/Attack 1/6.png" id="7_k21hq"]
+[ext_resource type="Texture2D" uid="uid://j2v15m8inofe" path="res://Assets/Shooter Traps/Sprites/Totems/Head 1/Idle 1/1.png" id="8_dwyd1"]
+[ext_resource type="AudioStream" uid="uid://bw3af6wihaibl" path="res://Sound/totemshoot.wav" id="9_21cjw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pswtl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7w7ec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ldft7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hwgd2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_44b7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tbh2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_k21hq")
+}],
+"loop": false,
+"name": &"fire",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_dwyd1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Shooter_Totem1" instance=ExtResource("1_04guq")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(2, -10)
+sprite_frames = SubResource("SpriteFrames_pswtl")
+animation = &"fire"
+
+[node name="WoodProj" type="AudioStreamPlayer2D" parent="." index="2"]
+stream = ExtResource("9_21cjw")
+volume_db = -4.16
+max_distance = 500.0

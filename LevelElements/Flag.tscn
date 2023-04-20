@@ -1,0 +1,56 @@
+[gd_scene load_steps=11 format=3 uid="uid://8d48gx83i8to"]
+
+[ext_resource type="Texture2D" uid="uid://c7u8lccysgpd1" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 01.png" id="1_sblhm"]
+[ext_resource type="Texture2D" uid="uid://b562hm3o2lrcv" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 02.png" id="2_00nmx"]
+[ext_resource type="Texture2D" uid="uid://d2r6u8keusgqj" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 03.png" id="3_51xtt"]
+[ext_resource type="Texture2D" uid="uid://dx85mt4cl6ihg" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 04.png" id="4_vkwmu"]
+[ext_resource type="Texture2D" uid="uid://2ki1kb37cxp4" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 05.png" id="5_mfuph"]
+[ext_resource type="Texture2D" uid="uid://brmijmv1i8cui" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 06.png" id="6_yda20"]
+[ext_resource type="Texture2D" uid="uid://c3cn78gfb4bsu" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 07.png" id="7_hqqas"]
+[ext_resource type="Texture2D" uid="uid://dpo18lwo4wyji" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 08.png" id="8_fojr8"]
+[ext_resource type="Texture2D" uid="uid://dkcnr3ct5fio8" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 09.png" id="9_oodnx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8br3w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sblhm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_00nmx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_51xtt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vkwmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mfuph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yda20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hqqas")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fojr8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_oodnx")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Flag" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(15, -47)
+sprite_frames = SubResource("SpriteFrames_8br3w")
+animation = &"idle"
+autoplay = "idle"
+frame = 8
+frame_progress = 0.740964

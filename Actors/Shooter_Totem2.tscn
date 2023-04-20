@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://cjto0gg0bott4"]
+
+[ext_resource type="PackedScene" uid="uid://c0ry2bpr6pc38" path="res://Actors/Shooter.tscn" id="1_gtixg"]
+[ext_resource type="Texture2D" uid="uid://drcewcarn274q" path="res://Assets/Shooter Traps/Sprites/Totems/Head 2/Attack 2/1.png" id="2_rmk3g"]
+[ext_resource type="Texture2D" uid="uid://cg7k64aunf82m" path="res://Assets/Shooter Traps/Sprites/Totems/Head 2/Attack 2/2.png" id="3_8ps8w"]
+[ext_resource type="Texture2D" uid="uid://h76kv86trip2" path="res://Assets/Shooter Traps/Sprites/Totems/Head 2/Attack 2/3.png" id="4_4kk20"]
+[ext_resource type="Texture2D" uid="uid://bxeqsmhyniubg" path="res://Assets/Shooter Traps/Sprites/Totems/Head 2/Attack 2/4.png" id="5_25nyk"]
+[ext_resource type="Texture2D" uid="uid://jx3e1pckmm6a" path="res://Assets/Shooter Traps/Sprites/Totems/Head 2/Attack 2/5.png" id="6_jv1ht"]
+[ext_resource type="Texture2D" uid="uid://bx13gvc1n3ffr" path="res://Assets/Shooter Traps/Sprites/Totems/Head 2/Attack 2/6.png" id="7_5ff3t"]
+[ext_resource type="Texture2D" uid="uid://40q88838btos" path="res://Assets/Shooter Traps/Sprites/Totems/Head 2/Idle 2/1.png" id="8_yw8a6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pswtl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rmk3g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8ps8w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4kk20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_25nyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jv1ht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5ff3t")
+}],
+"loop": false,
+"name": &"fire",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_yw8a6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Shooter_Totem1" instance=ExtResource("1_gtixg")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(2, -10)
+sprite_frames = SubResource("SpriteFrames_pswtl")
+animation = &"idle"

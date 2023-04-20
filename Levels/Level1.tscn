@@ -1,19 +1,28 @@
-[gd_scene load_steps=14 format=3 uid="uid://bjrhd4a00ox67"]
+[gd_scene load_steps=23 format=3 uid="uid://bx8ycqedbi6ey"]
 
-[ext_resource type="Texture2D" uid="uid://bwbnt1wig5ntw" path="res://Assets/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_t0ctx"]
-[ext_resource type="PackedScene" uid="uid://c284sxfddtxqc" path="res://Actors/Character.tscn" id="2_spe6i"]
-[ext_resource type="PackedScene" uid="uid://cm6cl4rf48t11" path="res://LevelElements/BackPalmTreeLeft.tscn" id="3_rqdm7"]
-[ext_resource type="PackedScene" uid="uid://ctu4gmlsapms2" path="res://LevelElements/BackPalmTreeRight.tscn" id="4_to813"]
-[ext_resource type="PackedScene" uid="uid://cbuh5vbq4m5w" path="res://LevelElements/BackPalmTreeRegular.tscn" id="5_rlq8m"]
-[ext_resource type="PackedScene" uid="uid://dv13kcclokf5j" path="res://LevelElements/FrontPalmTree.tscn" id="6_hgan6"]
-[ext_resource type="PackedScene" uid="uid://8d48gx83i8to" path="res://LevelElements/Flag.tscn" id="7_3rebe"]
-[ext_resource type="PackedScene" uid="uid://cs5qf67s70gcn" path="res://LevelElements/ShipHelm.tscn" id="8_6lthh"]
-[ext_resource type="PackedScene" uid="uid://cb086ye2sk0uv" path="res://Actors/Spikes.tscn" id="9_nyxuw"]
-[ext_resource type="PackedScene" uid="uid://2xssl0v4xsmd" path="res://Actors/LevelTransition.tscn" id="10_0mq52"]
-[ext_resource type="PackedScene" uid="uid://cwuu5hnugb6am" path="res://Actors/DeadZone.tscn" id="11_c1uw7"]
+[ext_resource type="Texture2D" uid="uid://bwbnt1wig5ntw" path="res://Assets/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_q8stg"]
+[ext_resource type="PackedScene" uid="uid://c284sxfddtxqc" path="res://Actors/Character.tscn" id="2_vayrl"]
+[ext_resource type="PackedScene" uid="uid://2xssl0v4xsmd" path="res://Actors/LevelTransition.tscn" id="3_txnv4"]
+[ext_resource type="PackedScene" uid="uid://cwuu5hnugb6am" path="res://Actors/DeadZone.tscn" id="4_1ii80"]
+[ext_resource type="Texture2D" uid="uid://dquo1ffvnm17d" path="res://Assets/Palm Tree Island/Sprites/Background/BG Image.png" id="4_cfl61"]
+[ext_resource type="PackedScene" uid="uid://cun4d2xpg7ku8" path="res://Actors/Shooter_Cannon.tscn" id="4_qaw8k"]
+[ext_resource type="PackedScene" uid="uid://xo1kjxjwqxl5" path="res://Actors/Sword.tscn" id="5_dklva"]
+[ext_resource type="Texture2D" uid="uid://dh04l5m27aeet" path="res://Assets/Palm Tree Island/Sprites/Background/Small Cloud 1.png" id="5_fjx7c"]
+[ext_resource type="Texture2D" uid="uid://eu18g6sayox5" path="res://Assets/Palm Tree Island/Sprites/Background/Small Cloud 3.png" id="6_w1cty"]
+[ext_resource type="PackedScene" uid="uid://ceaysnpoauly4" path="res://Actors/GoldCoin.tscn" id="8_inwp6"]
+[ext_resource type="PackedScene" uid="uid://chbab25qa1o45" path="res://Actors/RedDiamond.tscn" id="9_ocpp5"]
+[ext_resource type="PackedScene" uid="uid://bkwifndwftpg7" path="res://Actors/Barrel.tscn" id="11_py38y"]
+[ext_resource type="PackedScene" uid="uid://cb086ye2sk0uv" path="res://Actors/Spikes.tscn" id="12_inwhc"]
+[ext_resource type="PackedScene" uid="uid://8d48gx83i8to" path="res://LevelElements/Flag.tscn" id="13_q65pq"]
+[ext_resource type="PackedScene" uid="uid://cs5qf67s70gcn" path="res://LevelElements/ShipHelm.tscn" id="14_ms6n4"]
+[ext_resource type="PackedScene" uid="uid://ctu4gmlsapms2" path="res://LevelElements/BackPalmTreeRight.tscn" id="15_jflsr"]
+[ext_resource type="PackedScene" uid="uid://cbuh5vbq4m5w" path="res://LevelElements/BackPalmTreeRegular.tscn" id="16_82ok5"]
+[ext_resource type="PackedScene" uid="uid://dv13kcclokf5j" path="res://LevelElements/FrontPalmTree.tscn" id="17_12fcs"]
+[ext_resource type="AudioStream" uid="uid://dyg4mwvtyf1dc" path="res://Sound/coastwind.wav" id="19_ugvp7"]
+[ext_resource type="PackedScene" uid="uid://c7s8pjk84bd2q" path="res://Actors/Shooter_Totem1.tscn" id="20_xn3mu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2lxcl"]
-texture = ExtResource("1_t0ctx")
+texture = ExtResource("1_q8stg")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -659,78 +668,207 @@ texture = ExtResource("1_t0ctx")
 33:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 33:9/0/physics_layer_0/angular_velocity = 0.0
 
-[sub_resource type="TileSet" id="TileSet_sclv8"]
+[sub_resource type="TileSet" id="TileSet_sps12"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_2lxcl")
 
-[node name="TestLevel" type="Node2D"]
+[node name="Level1" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_sclv8")
+position = Vector2(0, -100)
+tile_set = SubResource("TileSet_sps12")
 format = 2
-layer_0/tile_data = PackedInt32Array(65518, 0, 0, 65519, 65536, 0, 65520, 131072, 0, 65521, 196608, 0, 65522, 262144, 0, 65523, 327680, 0, 65524, 0, 0, 65525, 65536, 0, 65526, 131072, 0, 65527, 196608, 0, 65528, 262144, 0, 65529, 327680, 0, 65530, 0, 0, 65531, 65536, 0, 65532, 131072, 0, 65533, 196608, 0, 65534, 262144, 0, 65535, 327680, 0, 0, 0, 0, 1, 65536, 0, 2, 131072, 0, 3, 196608, 0, 4, 262144, 0, 5, 327680, 0, 6, 0, 0, 7, 524288, 9, 8, 589824, 9, 9, 196608, 0, 10, 262144, 0, 11, 327680, 0, 12, 0, 0, 13, 65536, 0, 14, 131072, 0, 15, 196608, 0, 16, 262144, 0, 17, 327680, 0, 18, 0, 0, 19, 65536, 0, 20, 131072, 0, 21, 196608, 0, 22, 262144, 0, 23, 327680, 0, 24, 0, 0, 25, 65536, 0, 26, 131072, 0, 27, 196608, 0, 28, 262144, 0, 29, 327680, 0, 65512, 0, 0, 65513, 65536, 0, 65514, 131072, 0, 65515, 196608, 0, 65516, 262144, 0, 65517, 327680, 0, 65506, 0, 0, 65507, 65536, 0, 65508, 131072, 0, 65509, 196608, 0, 65510, 262144, 0, 65511, 327680, 0, 65500, 0, 0, 65501, 65536, 0, 65502, 131072, 0, 65503, 196608, 0, 65504, 524288, 9, 65505, 589824, 9, -65506, 524288, 8, 30, 524288, 9, -65505, 589824, 8, 31, 589824, 9, -65529, 524288, 8, -65528, 589824, 8, -32, 524288, 8, -31, 589824, 8, -131106, 524288, 8, -65570, 524288, 9, -131105, 589824, 8, -65569, 589824, 9, -262180, 524288, 8, -196644, 524288, 9, -262179, 589824, 8, -196643, 589824, 9, -262128, 524288, 8, -196592, 524288, 9, -262127, 589824, 8, -196591, 589824, 9)
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 65536, 0, 2, 131072, 0, 3, 196608, 0, 4, 262144, 0, 5, 327680, 0, 6, 0, 0, 7, 65536, 0, 8, 131072, 0, 9, 196608, 0, 10, 262144, 0, 11, 327680, 0, 12, 0, 0, 13, 65536, 0, 14, 131072, 0, 15, 196608, 0, 16, 262144, 0, 17, 327680, 0, 18, 0, 0, 19, 65536, 0, 20, 131072, 0, 21, 196608, 0, 22, 262144, 0, 23, 327680, 0, 24, 0, 0, 25, 65536, 0, 26, 131072, 0, 27, 196608, 0, 28, 262144, 0, 29, 327680, 0, 30, 0, 0, 31, 65536, 0, 32, 131072, 0, 33, 196608, 0, 34, 262144, 0, 35, 327680, 0, 786388, 0, 0, 851924, 0, 1, 917460, 0, 2, 982996, 0, 3, 1048532, 0, 4, 1114068, 0, 5, 786389, 65536, 0, 851925, 65536, 1, 917461, 65536, 2, 982997, 65536, 3, 1048533, 65536, 4, 1114069, 65536, 5, 786390, 131072, 0, 851926, 131072, 1, 917462, 131072, 2, 982998, 131072, 3, 1048534, 131072, 4, 1114070, 131072, 5, 786391, 196608, 0, 851927, 196608, 1, 917463, 196608, 2, 982999, 196608, 3, 1048535, 196608, 4, 1114071, 196608, 5, 786392, 262144, 0, 851928, 262144, 1, 917464, 262144, 2, 983000, 262144, 3, 1048536, 262144, 4, 1114072, 262144, 5, 786393, 327680, 0, 851929, 327680, 1, 917465, 327680, 2, 983001, 327680, 3, 1048537, 327680, 4, 1114073, 327680, 5, 720861, 524288, 0, 786397, 524288, 1, 851933, 524288, 2, 917469, 524288, 3, 983005, 524288, 4, 1048541, 524288, 5, 720862, 589824, 0, 786398, 589824, 1, 851934, 589824, 2, 917470, 589824, 3, 983006, 589824, 4, 1048542, 589824, 5, 524259, 524288, 0, 589795, 524288, 1, 655331, 524288, 2, 720867, 524288, 3, 786403, 524288, 4, 851939, 524288, 5, 524260, 589824, 0, 589796, 589824, 1, 655332, 589824, 2, 720868, 589824, 3, 786404, 589824, 4, 851940, 589824, 5, 262120, 0, 8, 327656, 0, 9, 262121, 65536, 8, 327657, 65536, 9, 262122, 131072, 8, 327658, 131072, 9, 262123, 196608, 8, 327659, 196608, 9, 262124, 262144, 8, 327660, 262144, 9, 262125, 327680, 8, 327661, 327680, 9, -524325, 0, 8, -458789, 0, 9, -524324, 65536, 8, -458788, 65536, 9, -524323, 131072, 8, -458787, 131072, 9, -524322, 196608, 8, -458786, 196608, 9, -524321, 262144, 8, -458785, 262144, 9, -524320, 327680, 8, -458784, 327680, 9, 65521, 0, 8, 131057, 0, 9, 65522, 65536, 8, 131058, 65536, 9, 65523, 131072, 8, 131059, 131072, 9, 65524, 196608, 8, 131060, 196608, 9, 65525, 262144, 8, 131061, 262144, 9, 65526, 327680, 8, 131062, 327680, 9, -262136, 1966080, 6, -196600, 1966080, 7, -131064, 1966080, 8, -65528, 1966080, 9, -262135, 2031616, 6, -196599, 2031616, 7, -131063, 2031616, 8, -65527, 2031616, 9, -262134, 2097152, 6, -196598, 2097152, 7, -131062, 2097152, 8, -65526, 2097152, 9, -262133, 2162688, 6, -196597, 2162688, 7, -131061, 2162688, 8, -65525, 2162688, 9, -131092, 524288, 8, -65556, 524288, 9, -131091, 589824, 8, -65555, 589824, 9, -327707, 524288, 8, -262171, 524288, 9, -327706, 589824, 8, -262170, 589824, 9, 65579, 0, 0, 131115, 0, 1, 196651, 0, 2, 262187, 0, 3, 327723, 0, 4, 393259, 0, 5, 65580, 65536, 0, 131116, 65536, 1, 196652, 65536, 2, 262188, 65536, 3, 327724, 65536, 4, 393260, 65536, 5, 65581, 131072, 0, 131117, 131072, 1, 196653, 131072, 2, 262189, 131072, 3, 327725, 131072, 4, 393261, 131072, 5, 65582, 196608, 0, 131118, 196608, 1, 196654, 196608, 2, 262190, 196608, 3, 327726, 196608, 4, 393262, 196608, 5, 65583, 262144, 0, 131119, 262144, 1, 196655, 262144, 2, 262191, 262144, 3, 327727, 262144, 4, 393263, 262144, 5, 65584, 327680, 0, 131120, 327680, 1, 196656, 327680, 2, 262192, 327680, 3, 327728, 327680, 4, 393264, 327680, 5)
+metadata/_edit_lock_ = true
 
-[node name="BackPalmTreeRight" parent="." instance=ExtResource("4_to813")]
-position = Vector2(78, -30)
+[node name="Character" parent="." instance=ExtResource("2_vayrl")]
+position = Vector2(-684, 62)
 
-[node name="BackPalmTreeRegular" parent="." instance=ExtResource("5_rlq8m")]
-position = Vector2(-62, -32)
+[node name="LevelTransition" parent="." instance=ExtResource("3_txnv4")]
+position = Vector2(540, -109)
+targetLevel = "Level2"
+neededGold = 5
 
-[node name="BackPalmTreeRegular2" parent="." instance=ExtResource("5_rlq8m")]
-position = Vector2(-17, -34)
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="BackPalmTreeRegular3" parent="." instance=ExtResource("5_rlq8m")]
-position = Vector2(-113, -33)
+[node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
 
-[node name="BackPalmTreeLeft" parent="." instance=ExtResource("3_rqdm7")]
-position = Vector2(-238, -30)
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Background"]
+position = Vector2(799, -190)
+scale = Vector2(13.9368, 16.4043)
+texture = ExtResource("4_cfl61")
+metadata/_edit_lock_ = true
 
-[node name="Character" parent="." instance=ExtResource("2_spe6i")]
-position = Vector2(20, -14)
+[node name="CloudsLayer1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.7, 0.7)
 
-[node name="FrontPalmTree" parent="." instance=ExtResource("6_hgan6")]
-position = Vector2(-125, -14)
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/CloudsLayer1"]
+position = Vector2(-198, -197)
+scale = Vector2(1.2973, 1.52083)
+texture = ExtResource("5_fjx7c")
 
-[node name="FrontPalmTree2" parent="." instance=ExtResource("6_hgan6")]
-position = Vector2(-15, -15)
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/CloudsLayer1"]
+position = Vector2(-16.5, -201.75)
+scale = Vector2(1.55405, 1.39583)
+texture = ExtResource("5_fjx7c")
 
-[node name="FrontPalmTree3" parent="." instance=ExtResource("6_hgan6")]
-position = Vector2(-75, -14)
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/CloudsLayer1"]
+position = Vector2(-441.5, -183.25)
+scale = Vector2(1.63514, 1.77083)
+texture = ExtResource("5_fjx7c")
+flip_h = true
 
-[node name="Flag" parent="." instance=ExtResource("7_3rebe")]
-position = Vector2(-168, 0)
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/CloudsLayer1"]
+position = Vector2(182, -193)
+scale = Vector2(1.71622, 2.10417)
+texture = ExtResource("5_fjx7c")
 
-[node name="ShipHelm" parent="." instance=ExtResource("8_6lthh")]
-position = Vector2(-185, 0)
+[node name="Sprite2D5" type="Sprite2D" parent="ParallaxBackground/CloudsLayer1"]
+position = Vector2(-599.5, -200.25)
+scale = Vector2(1.74324, 2.10417)
+texture = ExtResource("5_fjx7c")
 
-[node name="Spikes" parent="." instance=ExtResource("9_nyxuw")]
-position = Vector2(177, 1)
-spikesDamage = 5
+[node name="Sprite2D6" type="Sprite2D" parent="ParallaxBackground/CloudsLayer1"]
+position = Vector2(401, -192.25)
+scale = Vector2(1.18919, 1.52083)
+texture = ExtResource("5_fjx7c")
+flip_h = true
 
-[node name="Spikes2" parent="." instance=ExtResource("9_nyxuw")]
-position = Vector2(208, 1)
-spikesDamage = 5
+[node name="Sprite2D7" type="Sprite2D" parent="ParallaxBackground/CloudsLayer1"]
+position = Vector2(597, -175)
+scale = Vector2(1.43243, 1.59375)
+texture = ExtResource("5_fjx7c")
 
-[node name="Spikes3" parent="." instance=ExtResource("9_nyxuw")]
-position = Vector2(240, 1)
-spikesDamage = 5
+[node name="Sprite2D8" type="Sprite2D" parent="ParallaxBackground/CloudsLayer1"]
+position = Vector2(1480, -178)
+scale = Vector2(1.55405, 1.39583)
+texture = ExtResource("5_fjx7c")
 
-[node name="Spikes4" parent="." instance=ExtResource("9_nyxuw")]
-position = Vector2(272, 1)
-spikesDamage = 5
+[node name="Sprite2D9" type="Sprite2D" parent="ParallaxBackground/CloudsLayer1"]
+position = Vector2(1053, -179)
+scale = Vector2(1.63514, 1.77083)
+texture = ExtResource("5_fjx7c")
+flip_h = true
 
-[node name="Spikes5" parent="." instance=ExtResource("9_nyxuw")]
-position = Vector2(303, 1)
-spikesDamage = 5
+[node name="Sprite2D10" type="Sprite2D" parent="ParallaxBackground/CloudsLayer1"]
+position = Vector2(834, -181)
+scale = Vector2(1.35811, 2.42709)
+texture = ExtResource("5_fjx7c")
+flip_h = true
 
-[node name="Spikes6" parent="." instance=ExtResource("9_nyxuw")]
-position = Vector2(335, 1)
-spikesDamage = 5
+[node name="Sprite2D11" type="Sprite2D" parent="ParallaxBackground/CloudsLayer1"]
+position = Vector2(1281, -182)
+scale = Vector2(1.74324, 2.10417)
+texture = ExtResource("5_fjx7c")
 
-[node name="LevelTransition" parent="." instance=ExtResource("10_0mq52")]
-position = Vector2(453, -9)
-targetLevel = "DeadLevel"
+[node name="Sprite2D12" type="Sprite2D" parent="ParallaxBackground/CloudsLayer1"]
+position = Vector2(401, -192.25)
+scale = Vector2(1.18919, 1.52083)
+texture = ExtResource("5_fjx7c")
+flip_h = true
 
-[node name="DeadZone" parent="." instance=ExtResource("11_c1uw7")]
-position = Vector2(-106, 401)
-scale = Vector2(132.84, 2.88)
+[node name="CloudsLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.8, 0.8)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/CloudsLayer2"]
+position = Vector2(-95, -208)
+scale = Vector2(1.35, 1.26923)
+texture = ExtResource("6_w1cty")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/CloudsLayer2"]
+position = Vector2(285, -196)
+scale = Vector2(1.50357, 1.50641)
+texture = ExtResource("6_w1cty")
+flip_h = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/CloudsLayer2"]
+position = Vector2(-331, -184)
+scale = Vector2(1.35, 1.26923)
+texture = ExtResource("6_w1cty")
+
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/CloudsLayer2"]
+position = Vector2(703, -184)
+scale = Vector2(1.50357, 1.50641)
+texture = ExtResource("6_w1cty")
+flip_h = true
+
+[node name="Sword" parent="." instance=ExtResource("5_dklva")]
+position = Vector2(-657, 67)
+
+[node name="GoldCoin" parent="." instance=ExtResource("8_inwp6")]
+position = Vector2(-627, 66)
+
+[node name="RedDiamond" parent="." instance=ExtResource("9_ocpp5")]
+position = Vector2(-201, -110)
+
+[node name="GoldCoin2" parent="." instance=ExtResource("8_inwp6")]
+position = Vector2(-416, -207)
+
+[node name="RedDiamond2" parent="." instance=ExtResource("9_ocpp5")]
+position = Vector2(-507, -253)
+
+[node name="Shooter_Cannon" parent="." instance=ExtResource("4_qaw8k")]
+position = Vector2(24, -112)
+minWaitTime = 4
+pSpeed = 5
+
+[node name="Shooter_Cannon2" parent="." instance=ExtResource("4_qaw8k")]
+position = Vector2(158, -175)
+
+[node name="Barrel" parent="." instance=ExtResource("11_py38y")]
+position = Vector2(-547, 47)
+
+[node name="Spikes" parent="." instance=ExtResource("12_inwhc")]
+position = Vector2(276, -100)
+
+[node name="Spikes2" parent="." instance=ExtResource("12_inwhc")]
+position = Vector2(307, -100)
+
+[node name="Spikes3" parent="." instance=ExtResource("12_inwhc")]
+position = Vector2(338, -100)
+
+[node name="Spikes4" parent="." instance=ExtResource("12_inwhc")]
+position = Vector2(369, -100)
+
+[node name="Barrel2" parent="." instance=ExtResource("11_py38y")]
+position = Vector2(401, -112)
+
+[node name="GoldCoin3" parent="." instance=ExtResource("8_inwp6")]
+position = Vector2(442, -108)
+
+[node name="Barrel3" parent="." instance=ExtResource("11_py38y")]
+position = Vector2(772, -96)
+
+[node name="Flag" parent="." instance=ExtResource("13_q65pq")]
+position = Vector2(748, -82)
+
+[node name="ShipHelm" parent="." instance=ExtResource("14_ms6n4")]
+position = Vector2(-160, -98)
+
+[node name="BackPalmTreeRight" parent="." instance=ExtResource("15_jflsr")]
+position = Vector2(-121, -101)
+
+[node name="BackPalmTreeRegular" parent="." instance=ExtResource("16_82ok5")]
+position = Vector2(-232, -131)
+
+[node name="BackPalmTreeRegular2" parent="." instance=ExtResource("16_82ok5")]
+position = Vector2(-311, -179)
+
+[node name="FrontPalmTree" parent="." instance=ExtResource("17_12fcs")]
+position = Vector2(-303, -66)
+
+[node name="BackPalmTreeRight2" parent="." instance=ExtResource("15_jflsr")]
+position = Vector2(-380, -199)
+
+[node name="DeadZone" parent="." instance=ExtResource("4_1ii80")]
+position = Vector2(108, 557)
+scale = Vector2(169.058, 11.0205)
+
+[node name="BGSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_ugvp7")
+volume_db = -10.816
+autoplay = true
+
+[node name="Shooter_Totem1" parent="." instance=ExtResource("20_xn3mu")]
+position = Vector2(201, -131)
+projectileType = 1
